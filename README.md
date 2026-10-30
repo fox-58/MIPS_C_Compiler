@@ -1,1 +1,4 @@
-# MIPS_C_Compiler
+# MIPS C Compiler
+
+C compiler written in MIPS
+
