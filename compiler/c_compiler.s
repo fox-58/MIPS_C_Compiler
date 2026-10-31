@@ -118,6 +118,10 @@ process_character__next_letter:
 process_character__epilogue:
   jr    $ra
 
+  # parses the token in the buffer
+  #
+  # arguments
+  #   a0: length of token
 parse_token:
   jr    $ra
 # buffers set to c99 standard for the "minimum" of
