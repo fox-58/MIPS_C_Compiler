@@ -124,6 +124,8 @@ process_character__epilogue:
   #   a0: length of token
 parse_token:
   jr    $ra
+
+
 # buffers set to c99 standard for the "minimum" of
 # the allowed maximum of a string length
   .data

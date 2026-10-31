@@ -1,14 +1,15 @@
-# Code modified from geeks for geeks trie code
-# https://www.geeksforgeeks.org/c/implementation-of-trie-prefix-tree-in-c/
+/* 
+ * Code modified from geeks for geeks trie code
+ * https://www.geeksforgeeks.org/c/implementation-of-trie-prefix-tree-in-c/
+ */
 
 #include <stdlib.h>
-#include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
 
 #define ALPHABET_SIZE 26
 
-typedef struct {
+typedef struct TrieNode {
     struct TrieNode *children[ALPHABET_SIZE];
     bool end;
 } TrieNode;
@@ -20,17 +21,17 @@ TrieNode *createNode() {
         node->children[i] = NULL;
     }
 
-    return
+    return node;
+}
 
 void insert(TrieNode *root, const char *key) {
     TrieNode *current = root;
     for (int i = 0; i < strlen(key); i++) {
         int index = key[i] - 'a';
         if (current->children[index] == NULL) {
-            return false;
+            current->children[index] = createNode();
         }
         current = current->children[index];
-        return (current != NULL && current->end);
     }
     current->end = true;
 }
